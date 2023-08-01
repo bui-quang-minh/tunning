@@ -1,0 +1,177 @@
+﻿@using FinalProject_PRN.Models
+@using FinalProject_PRN.Controllers
+@using System.Text.Json;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tunning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/Styles/assets/img/favicon.png">
+
+    <link rel="stylesheet" href="~/Styles/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/Styles/assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/plugins/select2/css/select2.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/css/style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="breadcrumb-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-8 col-12">
+                        <nav aria-label="breadcrumb" class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/Home/Index">Home</a></li>
+                            </ol>
+                        </nav>
+                        @{
+                            int cnt = 0;
+                        }
+                        @foreach(Album a in ViewBag.albums)
+                        {
+                            cnt++;
+                        }
+                        <h2 class="breadcrumb-title">@cnt matches found for : @ViewData["searchString"]</h2>
+                    </div>
+                    <div class="col-md-4 col-12 d-md-block d-none">
+                        <div class="sort-by">
+                            <span class="sort-title"></span>
+                            <span class="sortby-fliter">
+                                <a href="/Home/Cart"><button class="btn btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</button></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar">
+                        <form action="/Home/Search" method="post">
+                        <div class="card search-filter">
+                            <div class="card-header">
+                                <h4 class="card-title mb-0">Search Filter</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="filter-widget">
+                                        <input style="" type="text" class="form-control" name="searchString" value="@ViewData["searchString"]" placeholder="Search song's name">
+                                </div>
+                                <div class="filter-widget">
+                                    <h4>Select Genre</h4>
+                                        <select class="form-select" name="genreString">
+                                            <option value="0">Select genre</option>
+                                            @foreach(Genre g in ViewBag.genres){
+                                                <option @(ViewData["genreString"].Equals(g.GenreId.ToString()) ? "selected" : "")  value="@g.GenreId">@g.Name</option>
+                                            }
+                                        </select>
+                                </div>
+                                <div class="btn-search">
+                                    <button type="submit" class="btn btn-block w-100">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+
+                    </div>
+                    <div class="col-md-12 col-lg-8 col-xl-9">
+                        @foreach(Album a in ViewBag.albums)
+                        {
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mentor-widget">
+                                    <div class="user-info-left">
+                                        <div class="mentor-img">
+                                            <a href="profile.html">
+                                                <img src="@a.AlbumUrl" class="img-fluid" alt="User Image">
+                                            </a>
+                                        </div>
+                                        <div class="user-info-cont">
+                                                <h4 class="usr-name">
+                                                    <a href="profile.html">
+                                                        @a.Title
+                                                    </a>
+                                                </h4>
+                                                @using (var context = new music_storeContext())
+                                                {
+                                                    Artist artist = context.Artists.Where(x => x.ArtistId == a.ArtistId).FirstOrDefault();
+                                                    <p class="mentor-type">@artist.Name</p>
+                                                }
+                                            <div class="rating">
+                                                <i class="fas fa-star filled"></i>
+                                                <i class="fas fa-star filled"></i>
+                                                <i class="fas fa-star filled"></i>
+                                                <i class="fas fa-star filled"></i>
+                                                <i class="fas fa-star filled"></i>
+                                                <span class="d-inline-block average-rating">(17)</span>
+                                            </div>
+                                            <div class="mentor-details">
+                                                <p class="user-location">
+                                                        <i class='fas fa-compact-disc'></i> Original CD 1st Release
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="user-info-right">
+                                        <div class="user-infos">
+                                            <ul>
+                                                
+                                                <li>
+                                                    <i class="far fa-money-bill-alt"></i> $@a.Price <i class="fas fa-info-circle" data-bs-toggle="tooltip"
+                                                                                                          title="The price is tax included"></i>
+                                                </li>
+                                                <li><i class="far fa-comment"></i> Preview</li>
+                                            </ul>
+                                        </div>
+                                        <div class="mentor-booking">
+                                                @if (@ViewData["searchString"] == null)
+                                                {
+                                                    ViewData["searchString"] = "0";    
+                                                }
+                                                <a class="apt-btn" href="/Home/AddToCart/@ViewData["searchString"]/@ViewData["genreString"]/@a.AlbumId/1">
+                                                <button id="myButton" class="btn btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</button>
+                                            </a>                                                        
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        } 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>   
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="~/Styles/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="~/Styles/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Styles/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+    <script src="~/Styles/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+
+    <script src="~/Styles/assets/plugins/select2/js/select2.min.js"></script>
+
+    <script src="~/Styles/assets/js/moment.min.js"></script>
+    <script src="~/Styles/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="~/Styles/assets/js/script.js"></script>
+</body>
+
+</html>

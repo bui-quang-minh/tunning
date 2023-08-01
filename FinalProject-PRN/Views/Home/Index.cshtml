@@ -1,0 +1,489 @@
+﻿@using FinalProject_PRN.Models
+@using FinalProject_PRN.Controllers
+@using System.Text.Json;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from mentoring.dreamguystech.com/html/template/index-three.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 May 2023 10:30:20 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Tunning</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/Styles/assets/img/favicon.png">
+
+    <link rel="stylesheet" href="~/Styles/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/Styles/assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Styles/assets/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/plugins/slick/slick.css">
+    <link rel="stylesheet" href="~/Styles/assets/plugins/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/plugins/aos/aos.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/css/style.css" >
+</head>
+<body class="body-home-one">
+    <div class="main-wrapper">
+
+        <header class="header  header-two">
+            <div class="header-fixed">
+                <nav class="navbar navbar-expand-lg header-nav">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a id="mobile_btn" href="javascript:void(0);">
+                                <span class="bar-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </a>
+                            <a href="index.html" class="navbar-brand logo">
+                                <img src="~/Styles/assets/img/logo-3.png" class="img-fluid" alt="Logo">
+                            </a>
+                        </div>
+                        <div class="main-menu-wrapper">
+                            <div class="menu-header">
+                                <a href="index.html" class="menu-logo">
+                                    <img src="~/Styles/assets/img/logo-3.png" class="img-fluid" alt="Logo">
+                                </a>
+                                <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </div>
+                            <ul class="main-nav">
+                                <li class="active has-submenu">
+                                    <a href="index.html">Home <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="index-two.html">Home 2</a></li>
+                                        <li class="active"><a href="index-three.html">Home 3</a></li>
+                                        <li><a href="index-four.html">Home 4</a></li>
+                                        <li><a href="index-five.html">Home 5</a></li>
+                                        <li><a href="index-six.html">Home 6</a></li>
+                                        <li><a href="index-seven.html">Home 7</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href>Mentor <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li><a href="dashboard.html">Mentor Dashboard</a></li>
+                                        <li><a href="bookings.html">Bookings</a></li>
+                                        <li><a href="schedule-timings.html">Schedule Timing</a></li>
+                                        <li><a href="mentee-list.html">Mentee List</a></li>
+                                        <li><a href="profile-mentee.html">Mentee Profile</a></li>
+                                        <li class="has-submenu">
+                                            <a href="blog.html">Blog</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog-details.html">Blog View</a></li>
+                                                <li><a href="add-blog.html">Add Blog</a></li>
+                                                <li><a href="edit-blog.html">Edit Blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="chat.html">Chat</a></li>
+                                        <li><a href="invoices.html">Invoices</a></li>
+                                        <li><a href="profile-settings.html">Profile Settings</a></li>
+                                        <li><a href="reviews.html">Reviews</a></li>
+                                        <li><a href="mentor-register.html">Mentor Register</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href>Mentee <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li class="has-submenu">
+                                            <a href="#">Mentors</a>
+                                            <ul class="submenu">
+                                                <li><a href="map-grid.html">Map Grid</a></li>
+                                                <li><a href="map-list.html">Map List</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="search.html">Search Mentor</a></li>
+                                        <li><a href="profile.html">Mentor Profile</a></li>
+                                        <li><a href="bookings-mentee.html">Bookings</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="booking-success.html">Booking Success</a></li>
+                                        <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
+                                        <li><a href="favourites.html">Favourites</a></li>
+                                        <li><a href="chat-mentee.html">Chat</a></li>
+                                        <li><a href="profile-settings-mentee.html">Profile Settings</a></li>
+                                        <li><a href="change-password.html">Change Password</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href>Pages <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li><a href="voice-call.html">Voice Call</a></li>
+                                        <li><a href="video-call.html">Video Call</a></li>
+                                        <li><a href="search.html">Search Mentors</a></li>
+                                        <li><a href="components.html">Components</a></li>
+                                        <li class="has-submenu">
+                                            <a href="invoices.html">Invoices</a>
+                                            <ul class="submenu">
+                                                <li><a href="invoices.html">Invoices</a></li>
+                                                <li><a href="invoice-view.html">Invoice View</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="blank-page.html">Starter Page</a></li>
+                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="forgot-password.html">Forgot Password</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href>Blog <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li><a href="blog-list.html">Blog List</a></li>
+                                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="admin/index.html" target="_blank">Admin</a>
+                                </li>
+                                <li class="login-link">
+                                    <a href="login.html">Login / Signup</a>
+                                </li>
+                            </ul>
+                        </div>
+                        @{
+                            User current_user = ViewBag.current_user;
+                            if (current_user == null)
+                            {
+                                <ul class="nav header-navbar-rht">
+                                    <li class="nav-item">
+                                        <a class="nav-link header-login-two" href="/Account/Login">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link header-login" href="/Account/Register">Sign up</a>
+                                    </li>
+                                </ul>
+                            }
+                            else
+                            {
+                                <ul class="nav header-navbar-rht">
+
+                                    <li class="nav-item dropdown has-arrow logged-item">
+                                        <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                                            <span class="user-img">
+                                                <img class="rounded-circle" src="@current_user.ImageRef" width="31"
+                                                 alt="@current_user.FirstName @current_user.LastName">
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <div class="user-header">
+                                                <div class="avatar avatar-sm">
+                                                    <img src="@current_user.ImageRef" alt="User Image"
+                                                     class="avatar-img rounded-circle">
+                                                </div>
+                                                <div class="user-text">
+                                                    <h6>@current_user.FirstName @current_user.LastName</h6>
+                                                    <p class="text-muted mb-0">@(current_user.IsAdmin ? "Admin" : "Client")
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <a class="dropdown-item" href="/Home/Index">Dashboard</a>
+                                            <a class="dropdown-item" href="/Account/AccountSetting">Account Settings</a>
+                                            <a class="dropdown-item" href="/Account/Logout">Logout</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            
+                            }
+                        }
+                        
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class=" home-slide-two home-slide-search d-flex align-items-center">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="home-slide-face aos" data-aos="fade-up">
+                            <div class="hometwo-slide-text">
+                                <a href="dashboard.html" class="btn bg-stop-learn">Never Stop Listening</a>
+                                <h1>Online Music <br>to Listen</h1>
+                                <p>Own your music store online!!!</p>
+                            </div>
+
+                            <div class="search-box ">
+                                <form action="/Home/Search" method="post">
+                                    <div class="form-group search-info location-search ">
+                                        <input type="text" class="form-control text-truncate" name="searchString" placeholder=" Tìm nhạc đi làm ơn đấy">
+                                        <button type="submit" class="btn bg-search search-btn align-items-center d-flex justify-content-center"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="object-slide-img aos " data-aos="fade-up">
+                            <img src="~/Styles/assets/img/object-three.png" alt>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="most-popular most-popular-two">
+            <div class="container">
+                <div class="section-top-head">
+                    <div class="section-header aos " data-aos="fade-up">
+                        <h2>Most Populer Genres</h2>
+                        <p class="sub-title">Best music you can find and hear. You dont hear me buồn.</p>
+                    </div>
+                    <div class="section-btn align-items-center aos " data-aos="fade-up">
+                        <a href="search.html" class="btn btn-primary">See All Genres</a>
+                    </div>
+                </div>
+                <div class="popular-categories aos " data-aos="fade-up">
+                    <div class="row">
+                        @foreach(Genre g in ViewBag.genres){
+                        <div class="col-lg-2 col-md-4">
+                            <a href="/Home/Search">
+                                    <div class="sub-categories bg-photography align-items-center">
+                                    <div class="categories-img d-flex justify-content-center align-items-center">
+                                        <img src="~/Styles/assets/img/categories/cate-1.svg" alt>
+                                    </div>
+                                    <div class="categories-text text-center">
+                                        <h4>@g.Name</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section trending-courses trending-courses-two">
+            <div class="container">
+                <div class="section-top-head">
+                    <div class="section-header aos " data-aos="fade-up">
+                        <h2>Most Trending Courses</h2>
+                        <p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget aenean accumsan bibendum gravida maecenas augue elementum et neque. Suspendisse imperdiet.</p>
+                    </div>
+                    <div class="section-btn align-items-center aos " data-aos="fade-up">
+                        <a href="/Home/Search" class="btn btn-primary">View All</a>
+                    </div>
+                </div>
+                <div class="course-two-all aos " data-aos="fade-up">
+                    <div class="row">
+                        @foreach(Album a in  ViewBag.albums){
+                        <div class="col-lg-4 col-md-6">
+                            <div class="course-box">
+                                <div class="product">
+                                    <div class="product-img">
+                                        <a href="/Home/AlbumDetails/0/0/@a.AlbumId">
+                                            <img class="img-fluid" alt src="@a.AlbumUrl" width="600" height="300">
+                                        </a>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="course-info d-flex align-items-center">
+                                            <div class="rating rating-star">
+                                                <i class="fas fa-star filled"></i>
+                                                <span class="d-inline-block average-rating rate-point ">4.4<span class="rate-star-point">(15)</span></span>
+                                            </div>
+                                            <div class="course-view">
+                                                <i class="fas fa-file-alt file-pink"></i>
+                                                <div class="course-point">
+                                                    <span>85</span>
+                                                </div>
+                                            </div>
+                                            <div class="course-view">
+                                                <i class="fas fa-user-graduate"></i>
+                                                <div class="graduate-point">
+                                                    <span>85</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3 class="title"><a href="search.html">@a.Title</a></h3>
+                                        
+                                        @{
+                                        //code here
+                                        }
+
+                                        <div class="rating rating-star rating-two align-items-center">
+                                            <div class="rating-img">
+                                                <img src="~/Styles/assets/img/user/user2.jpg" alt>
+                                            </div>
+                                                @using (var context = new music_storeContext())
+                                                {
+                                                    Artist artist = context.Artists.Where(x => x.ArtistId == a.ArtistId).FirstOrDefault();
+                                                    <h5>@artist.Name</h5>
+                                                }
+                                                <div class="course-price">
+                                                <h4>$@a.Price</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer footer-two">
+
+            <div class="footer-top footer-two-top aos " data-aos="fade-up">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="footer-logo">
+                                <img src="~/Styles/assets/img/logo-3.png" alt="logo">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+
+                            <div class="footer-list">
+                                <ul class="footer-social-list">
+                                    <li>
+                                        <a href>Facebook</a>
+                                    </li>
+                                    <li>
+                                        <a href>Instagram </a>
+                                    </li>
+                                    <li>
+                                        <a href>Linkedin </a>
+                                    </li>
+                                    <li>
+                                        <a href>Pinterest</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="subscriber-two">
+                                <div class="subscriber-two-head">
+                                    <h2>Subscribe</h2>
+                                </div>
+                                <form action="https://mentoring.dreamguystech.com/html/template/search.html">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="E-Mail Adresse">
+                                        <a href="search.html" class="btn bg-path d-flex align-items-center">
+                                            <i class="fas fa-arrow-up"></i>
+                                        </a>
+                                    </div>
+                                    <div class="bottom-border-two"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+
+                            <div class="footer-widget footer-about">
+                                <div class="footer-about-content">
+                                    <h2 class="footer-title">About Mentoring</h2>
+                                    <p class="footer-sub-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+
+                            <div class="footer-widget footer-menu">
+                                <h2 class="footer-title">For Mentee</h2>
+                                <ul>
+                                    <li><a href="search.html">Search Mentors</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="booking.html">Booking</a></li>
+                                    <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+
+                            <div class="footer-widget footer-menu">
+                                <h2 class="footer-title">For Mentors</h2>
+                                <ul>
+                                    <li><a href="appointments.html">Appointments</a></li>
+                                    <li><a href="chat.html">Chat</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="dashboard.html">Mentor Dashboard</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer-bottom">
+                <div class="container">
+
+                    <div class="copyright-border"></div>
+                    <div class="copyright ">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 ">
+                                <div class="copyright-text">
+                                    <p class="mb-0">&copy; 2022 Mentoring. All rights reserved.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="term-privacy">
+                                    <div class="social-icon">
+                                        <ul class="align-items-center">
+                                            <li>
+                                                <a href="javascript:void(0);">Terms</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Privacy </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">Cookies </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="back-to-top show">
+                        <a class="back-to-top-icon align-items-center justify-content-center d-flex show" href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script src="~/Styles/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="~/Styles/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Styles/assets/js/owl.carousel.min.js"></script>
+
+    <script src="~/Styles/assets/plugins/slick/slick.js"></script>
+
+    <script src="~/Styles/assets/plugins/aos/aos.js"></script>
+
+    <script src="~/Styles/assets/js/script.js"></script>
+</body>
+
+<!-- Mirrored from mentoring.dreamguystech.com/html/template/index-three.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 May 2023 10:30:49 GMT -->
+</html>
+

@@ -1,0 +1,458 @@
+﻿@using FinalProject_PRN.Logic;
+@using FinalProject_PRN.Models;
+@using System.Text.Json;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from mentoring.dreamguystech.com/html/template/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 May 2023 10:32:14 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>Tunning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/Styles/assets/img/favicon.png">
+
+    <link rel="stylesheet" href="~/Styles/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/Styles/assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="~/Styles/assets/css/style.css">
+</head>
+<body>
+    @{
+        Album a = ViewBag.album; 
+    }
+    <div class="main-wrapper">
+
+        <header class="header">
+            <div class="header-fixed">
+                <nav class="navbar navbar-expand-lg header-nav">
+                    <div class="navbar-header">
+                        <a id="mobile_btn" href="javascript:void(0);">
+                            <span class="bar-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </a>
+                        <a href="/Home/Index" class="navbar-brand logo">
+                            <img src="~/Styles/assets/img/logo-3.png" class="img-fluid" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="main-menu-wrapper">
+                        <div class="menu-header">
+                            <a href="/Home/Index" class="menu-logo">
+                                <img src="~/Styles/assets/img/logo-3.png" class="img-fluid" alt="Logo">
+                            </a>
+                            <a id="menu_close" class="menu-close" href="javascript:void(0);">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </div>
+                        <ul class="main-nav">
+                            <li class="has-submenu">
+                                <a href="index.html">Home <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index-two.html">Home 2</a></li>
+                                    <li><a href="index-three.html">Home 3</a></li>
+                                    <li><a href="index-four.html">Home 4</a></li>
+                                    <li><a href="index-five.html">Home 5</a></li>
+                                    <li><a href="index-six.html">Home 6</a></li>
+                                    <li><a href="index-seven.html">Home 7</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href>Mentor <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="dashboard.html">Mentor Dashboard</a></li>
+                                    <li><a href="bookings.html">Bookings</a></li>
+                                    <li><a href="schedule-timings.html">Schedule Timing</a></li>
+                                    <li><a href="mentee-list.html">Mentee List</a></li>
+                                    <li><a href="profile-mentee.html">Mentee Profile</a></li>
+                                    <li class="has-submenu">
+                                        <a href="blog.html">Blog</a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog-details.html">Blog View</a></li>
+                                            <li><a href="add-blog.html">Add Blog</a></li>
+                                            <li><a href="edit-blog.html">Edit Blog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="chat.html">Chat</a></li>
+                                    <li><a href="invoices.html">Invoices</a></li>
+                                    <li><a href="profile-settings.html">Profile Settings</a></li>
+                                    <li><a href="reviews.html">Reviews</a></li>
+                                    <li><a href="mentor-register.html">Mentor Register</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href>Mentee <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li class="has-submenu">
+                                        <a href="#">Mentors</a>
+                                        <ul class="submenu">
+                                            <li><a href="map-grid.html">Map Grid</a></li>
+                                            <li><a href="map-list.html">Map List</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="search.html">Search Mentor</a></li>
+                                    <li><a href="profile.html">Mentor Profile</a></li>
+                                    <li><a href="bookings-mentee.html">Bookings</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="booking-success.html">Booking Success</a></li>
+                                    <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
+                                    <li><a href="favourites.html">Favourites</a></li>
+                                    <li><a href="chat-mentee.html">Chat</a></li>
+                                    <li><a href="profile-settings-mentee.html">Profile Settings</a></li>
+                                    <li><a href="change-password.html">Change Password</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href>Pages <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="voice-call.html">Voice Call</a></li>
+                                    <li><a href="video-call.html">Video Call</a></li>
+                                    <li><a href="search.html">Search Mentors</a></li>
+                                    <li><a href="components.html">Components</a></li>
+                                    <li class="has-submenu">
+                                        <a href="invoices.html">Invoices</a>
+                                        <ul class="submenu">
+                                            <li><a href="invoices.html">Invoices</a></li>
+                                            <li><a href="invoice-view.html">Invoice View</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="blank-page.html">Starter Page</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="forgot-password.html">Forgot Password</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu active">
+                                <a href>Blog <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="blog-list.html">Blog List</a></li>
+                                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                                    <li class="active"><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="admin/index.html" target="_blank">Admin</a>
+                            </li>
+                            <li class="login-link">
+                                <a href="login.html">Login / Signup</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="nav header-navbar-rht">
+
+                        <li class="nav-item dropdown has-arrow logged-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                                <span class="user-img">
+                                    <img class="rounded-circle" src="~/Styles/assets/img/user/user.jpg" width="31" alt="Darren Elder">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <div class="user-header">
+                                    <div class="avatar avatar-sm">
+                                        <img src="~/Styles/assets/img/user/user.jpg" alt="User Image" class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="user-text">
+                                        <h6>Jonathan Doe</h6>
+                                        <p class="text-muted mb-0">Mentor</p>
+                                    </div>
+                                </div>
+                                <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+                                <a class="dropdown-item" href="profile-settings.html">Profile Settings</a>
+                                <a class="dropdown-item" href="login.html">Logout</a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+        <div class="breadcrumb-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-12 col-12">
+                        <nav aria-label="breadcrumb" class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                            </ol>
+                        </nav>
+                        <h2 class="breadcrumb-title">Blog Details</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                        <div class="blog-view">
+                            <div class="blog blog-single-post">
+                                <div class="blog-image">
+                                    <a href="javascript:void(0);"><img alt src="@a.AlbumUrl" class="img-fluid"></a>
+                                </div>
+                                <h3 class="blog-title">@a.Title</h3>
+                                <div class="blog-info clearfix">
+                                    <div class="post-left">
+                                        @{
+                                            Artist artist = ArtistManage.getArtistById(a.ArtistId);
+                                        }
+                                        <ul>
+                                            <li>
+                                                <div class="post-author">
+                                                    <a href=""><span>@artist.Name</span></a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                @{
+                                    int tmp = 0;
+                                    var client = new HttpClient();
+                                    var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://api.deezer.com/search?q=album:\"" + a.Title + "\""),
+                Headers =
+                                {
+                                { "X-RapidAPI-Key", "ac6753f471mshc4d62e3a423c79dp13d4f0jsn03006c8c1d6c" },
+                                { "X-RapidAPI-Host", "deezerdevs-deezer.p.rapidapi.com" },
+                                },
+            };
+                                    using (var response = await client.SendAsync(request))
+                                    {
+                                        List<Deezer> income = new List<Deezer>();
+                                        response.EnsureSuccessStatusCode();
+                                        var body = await response.Content.ReadAsStringAsync();
+                                        JsonDocument jsonDocument = JsonDocument.Parse(body);
+                                        JsonElement root = jsonDocument.RootElement;
+                                        JsonElement data = root.GetProperty("data");
+                                        foreach (JsonElement item in data.EnumerateArray())
+                                        {
+                                            if (a.Title.Equals(item.GetProperty("title").GetString()))
+                                            {
+                                                tmp++;
+                                                <audio style="width: 100%" src="@item.GetProperty("preview").GetString()" controls></audio>
+                                                <div class="blog-info clearfix">
+                                                    <div class="post-left">
+                                                        <ul>
+                                                            <li><i class="fas fa-compact-disc"></i>@item.GetProperty("title").GetString()</li>
+                                                            <li><i class="fa fa-link" aria-hidden="true"></i><a href="@item.GetProperty("link").GetString()">@item.GetProperty("link").GetString()</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                break;
+                                            }
+                                        }
+                                        if (tmp == 0)
+                                        {
+                                            <button disabled="" style="margin-bottom:2%" type="button" class="btn btn-block btn-outline-danger w-100">No Preview</button>
+                                        }
+
+
+                                    }
+                                }
+                                <div class="blog-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                                </div>
+                                <div class="blog-content">
+                                    <br>
+                                    <a  class="apt-btn" href="/Home/Search/@a.Title/0/">
+                                        <button style="width:100%" id="myButton" class="btn btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Purchase now!</button>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 sidebar-right theiaStickySidebar">
+
+                        <div class="card search-widget">
+                            <div class="card-body">
+                                <form class="search-form">
+                                    <div class="input-group">
+                                        <input type="text" placeholder="Search..." class="form-control">
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        @{
+                            List<Album> la = ViewBag.allalbums;
+                            la = la.Where(x => x.ArtistId == artist.ArtistId&&x.AlbumId!=a.AlbumId).ToList();
+                        }
+                        <div class="card post-widget">
+                            <div class="card-header">
+                                <h4 class="card-title">Also from @artist.Name</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="latest-posts">
+                                    @foreach(Album al in la){
+                                    <li>
+                                        <div class="post-thumb">
+                                                <a href="/Home/AlbumDetails/0/0/@al.AlbumId">
+                                                <img class="img-fluid" src="@al.AlbumUrl" alt>
+                                            </a>
+                                        </div>
+                                        <div class="post-info">
+                                            <h4>
+                                                <a href="/Home/AlbumDetails/0/0/@al.AlbumId">@al.Title</a>
+                                            </h4>
+                                        </div>
+                                    </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+
+            <div class="footer-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="footer-widget footer-about">
+                                <div class="footer-logo">
+                                    <img src="~/Styles/assets/img/logo.png" alt="logo">
+                                </div>
+                                <div class="footer-about-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    <div class="social-icon">
+                                        <ul>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank"><i class="fab fa-dribbble"></i> </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="footer-widget footer-menu">
+                                <h2 class="footer-title">For Mentee</h2>
+                                <ul>
+                                    <li><a href="search.html">Search Mentors</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="booking.html">Booking</a></li>
+                                    <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="footer-widget footer-menu">
+                                <h2 class="footer-title">For Mentors</h2>
+                                <ul>
+                                    <li><a href="appointments.html">Appointments</a></li>
+                                    <li><a href="chat.html">Chat</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="dashboard.html">Mentor Dashboard</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="footer-widget footer-contact">
+                                <h2 class="footer-title">Contact Us</h2>
+                                <div class="footer-contact-info">
+                                    <div class="footer-address">
+                                        <span><i class="fas fa-map-marker-alt"></i></span>
+                                        <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
+                                    </div>
+                                    <p>
+                                        <i class="fas fa-phone-alt"></i>
+                                        +1 315 369 5943
+                                    </p>
+                                    <p class="mb-0">
+                                        <i class="fas fa-envelope"></i>
+                                        <a href="https://mentoring.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ec81898298839e85828bac89948d819c8089c28f8381">[email&#160;protected]</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer-bottom">
+                <div class="container-fluid">
+
+                    <div class="copyright">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <div class="copyright-text">
+                                    <p class="mb-0">&copy; 2020 Mentoring. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="~/Styles/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="~/Styles/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Styles/assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+    <script src="~/Styles/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+
+    <script src="~/Styles/assets/js/script.js"></script>
+</body>
+
+<!-- Mirrored from mentoring.dreamguystech.com/html/template/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 May 2023 10:32:18 GMT -->
+</html>
